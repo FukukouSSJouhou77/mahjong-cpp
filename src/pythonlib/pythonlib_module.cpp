@@ -161,4 +161,5 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
         .value("AkaPinzu5", Tile::AkaPinzu5)
         .value("AkaSozu5", Tile::AkaSozu5);
 
+
 }
