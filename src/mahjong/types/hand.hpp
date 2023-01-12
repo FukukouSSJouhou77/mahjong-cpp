@@ -28,7 +28,7 @@ class Hand : private boost::equality_comparable<Hand, Hand>
     Hand(const std::vector<int> &tiles);
     Hand(const std::vector<int> &tiles, const std::vector<MeldedBlock> &melds);
 
-    bool is_menzen() const;aaaa
+    bool is_menzen() const;aaaaa
     bool is_melded() const;
     bool contains(int tile) const;
     int num_tiles(int tile) const;
