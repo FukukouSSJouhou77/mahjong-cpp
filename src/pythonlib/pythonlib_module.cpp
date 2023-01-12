@@ -116,9 +116,49 @@ int sample_mod1() {
         // }
     }
 }
+namespace py = pybind11;
 
 PYBIND11_MODULE(mahjong_pythonlib_mod, m)
 {
     m.doc() = "my test module";
     m.def("sample_mod1", &sample_mod1, "sample_mod1");
+    py::enum_<Tile::Type>(m, "Tile")
+        .value("Manzu1", Tile::Manzu1)
+        .value("Manzu2", Tile::Manzu2)
+        .value("Manzu3", Tile::Manzu3)
+        .value("Manzu4", Tile::Manzu4)
+        .value("Manzu5", Tile::Manzu5)
+        .value("Manzu6", Tile::Manzu6)
+        .value("Manzu7", Tile::Manzu7)
+        .value("Manzu8", Tile::Manzu8)
+        .value("Manzu9", Tile::Manzu9)
+        .value("Pinzu1", Tile::Pinzu1)
+        .value("Pinzu2", Tile::Pinzu2)
+        .value("Pinzu3", Tile::Pinzu3)
+        .value("Pinzu4", Tile::Pinzu4)
+        .value("Pinzu5", Tile::Pinzu5)
+        .value("Pinzu6", Tile::Pinzu6)
+        .value("Pinzu7", Tile::Pinzu7)
+        .value("Pinzu8", Tile::Pinzu8)
+        .value("Pinzu9", Tile::Pinzu9)
+        .value("Sozu1", Tile::Sozu1)
+        .value("Sozu2", Tile::Sozu2)
+        .value("Sozu3", Tile::Sozu3)
+        .value("Sozu4", Tile::Sozu4)
+        .value("Sozu5", Tile::Sozu5)
+        .value("Sozu6", Tile::Sozu6)
+        .value("Sozu7", Tile::Sozu7)
+        .value("Sozu8", Tile::Sozu8)
+        .value("Sozu9", Tile::Sozu9)
+        .value("Ton", Tile::Ton)
+        .value("Nan", Tile::Nan)
+        .value("Sya", Tile::Sya)
+        .value("Pe", Tile::Pe)
+        .value("Haku", Tile::Haku)
+        .value("Hatu", Tile::Hatu)
+        .value("Tyun", Tile::Tyun)
+        .value("AkaManzu5", Tile::AkaManzu5)
+        .value("AkaPinzu5", Tile::AkaPinzu5)
+        .value("AkaSozu5", Tile::AkaSozu5);
+
 }
