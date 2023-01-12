@@ -115,6 +115,7 @@ int sample_mod1() {
         //     }
         // }
     }
+    return 0;
 }
 namespace py = pybind11;
 
@@ -160,6 +161,7 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
         .value("AkaManzu5", Tile::AkaManzu5)
         .value("AkaPinzu5", Tile::AkaPinzu5)
         .value("AkaSozu5", Tile::AkaSozu5);
+    py::class_<Hand>(m, "Hand").def(py::init<const std::vector<int>>());
 
 
 }

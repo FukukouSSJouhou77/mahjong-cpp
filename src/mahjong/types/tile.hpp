@@ -56,7 +56,7 @@ struct Tile
     };
 
     static inline const std::map<int, std::string> Name = {
-        {Null, "Null"},          {Manzu1, "一萬"},      {Manzu2, "二萬"},
+        {Null, "Null"},          {Manzu1, u8"一萬"},      {Manzu2, "二萬"},
         {Manzu3, "三萬"},        {Manzu4, "四萬"},      {Manzu5, "五萬"},
         {Manzu6, "六萬"},        {Manzu7, "七萬"},      {Manzu8, "八萬"},
         {Manzu9, "九萬"},        {Pinzu1, "一筒"},      {Pinzu2, "二筒"},
