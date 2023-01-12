@@ -70,3 +70,10 @@ option(BUILD_SAMPLES "build sample programs." ON)
 if(BUILD_SAMPLES)
   add_subdirectory(src/samples)
 endif()
+
+# pythonlib
+option(BUILD_PYLIB "build python programs." ON)
+if(BUILD_PYLIB)
+  add_subdirectory(src/pythonlib)
+endif()
+
