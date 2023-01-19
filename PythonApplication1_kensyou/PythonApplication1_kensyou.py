@@ -21,6 +21,10 @@ flag = int(pymod.ExpectedValueCalculator.CalcSyantenDown )| int(pymod.ExpectedVa
 dora_indicators=[int(pymod.Tile.Ton)]
 hand=hand5
 exp_value_calculator=pymod.ExpectedValueCalculator()
+score_calculator=pymod.ScoreCalculator()
+score_calculator.set_bakaze(bakaze)
+score_calculator.set_zikaze(zikaze)
+score_calculator.set_dora_indicators(dora_indicators)
 print("test")
 print(a)
 input()
