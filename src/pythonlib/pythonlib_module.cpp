@@ -170,7 +170,8 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
         .export_values();
     py::class_<Hand>(m, "Hand").def(py::init<const std::vector<int>>());
     pybind11::class_<ExpectedValueCalculator> exvc(m, "ExpectedValueCalculator");
-    exvc.def(py::init());
+    exvc.def(py::init())
+        .def("calc1",&ExpectedValueCalculator::calc1);
     pybind11::class_<ScoreCalculator> sc(m, "ScoreCalculator");
     sc.def(py::init())
         .def("set_bakaze",&ScoreCalculator::set_bakaze)
@@ -188,7 +189,8 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
         .value("CalcAkaTileTumo", ExpectedValueCalculator::Flag::CalcAkaTileTumo)
         .value("MaximaizeWinProb", ExpectedValueCalculator::Flag::MaximaizeWinProb)
         .export_values();
-
+    py::class_<Candidate> candicate_Z(m, "Candidate");
+    candicate_Z.def_readwrite("tenpai_probs", &Candidate::tenpai_probs);
     pybind11::class_<SyantenCalculator> Syantenc(m, "SyantenCalculator");
     Syantenc.def(py::init())
         .def_static("calc",&SyantenCalculator::calc);

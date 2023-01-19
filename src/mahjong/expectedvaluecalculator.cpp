@@ -46,6 +46,21 @@ ExpectedValueCalculator::calc(const Hand &hand, const ScoreCalculator &score_cal
     std::vector<int> counts = count_left_tiles(hand, dora_indicators);
     return calc(hand, score_calculator, dora_indicators, syanten_type, counts, flag);
 }
+/**
+ * @brief 期待値を計算する。
+ *
+ * @param hand 手牌
+ * @param score_calculator 点数計算機
+ * @param dora_indicators ドラ表示牌の一覧
+ * @param flag フラグ
+ * @return 各打牌の情報
+ */
+std::tuple<bool, std::vector<Candidate>>
+ExpectedValueCalculator::calc1(const Hand &hand, const ScoreCalculator &score_calculator,
+                              const std::vector<int> &dora_indicators, int syanten_type, int flag)
+{
+    return calc(hand,score_calculator,dora_indicators,syanten_type,flag);
+}
 
 /**
  * @brief 期待値を計算する。
@@ -114,6 +129,24 @@ ExpectedValueCalculator::calc(const Hand &hand, const ScoreCalculator &score_cal
     clear_cache();
 
     return {true, candidates};
+}
+
+/**
+ * @brief 期待値を計算する。
+ *
+ * @param hand 手牌
+ * @param score_calculator 点数計算機
+ * @param dora_indicators ドラ表示牌の一覧
+ * @param flag フラグ
+ * @return 各打牌の情報
+ */
+std::tuple<bool, std::vector<Candidate>>
+ExpectedValueCalculator::calc2(const Hand &hand, const ScoreCalculator &score_calculator,
+                               const std::vector<int> &dora_indicators, int syanten_type,
+                               const std::vector<int> &counts, int flag)
+{
+    return calc(hand,score_calculator,dora_indicators,syanten_type,counts,flag);
+
 }
 
 /**

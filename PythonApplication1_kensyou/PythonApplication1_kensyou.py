@@ -25,7 +25,15 @@ score_calculator=pymod.ScoreCalculator()
 score_calculator.set_bakaze(bakaze)
 score_calculator.set_zikaze(zikaze)
 score_calculator.set_dora_indicators(dora_indicators)
-c,syanten=score_calculator.calc(hand,syanten_type)
+c,syanten=pymod.SyantenCalculator.calc(hand,syanten_type)
+success, candidates =exp_value_calculator.calc1(hand, score_calculator, dora_indicators, syanten_type, flag)
+if success:
+    None
+else:
+    print("ERR")
+    exit(-1)
+print(candidates[0].tenpai_probs)
+print(syanten)
 print("test")
 print(a)
 input()
