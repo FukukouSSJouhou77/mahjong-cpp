@@ -193,7 +193,7 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
     candicate_Z.def_readwrite("tenpai_probs", &Candidate::tenpai_probs)
         .def_readwrite("exp_values",&Candidate::exp_values)
         .def_readwrite("tile",&Candidate::tile)
-        ;
+        .def_readwrite("win_probs",&Candidate::win_probs);
     pybind11::class_<SyantenCalculator> Syantenc(m, "SyantenCalculator");
     Syantenc.def(py::init())
         .def_static("calc",&SyantenCalculator::calc);
