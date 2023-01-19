@@ -129,7 +129,6 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
     m.doc() = "my test module";
     m.def("sample_mod1", &sample_mod1, "sample_mod1");
     pybind11::class_<Tile> tile(m, "Tile");
-    
     py::enum_<Tile::Type>(tile, "Type")
         .value("Manzu1", Tile::Type::Manzu1)
         .value("Manzu2", Tile::Type::Manzu2)
@@ -170,6 +169,18 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
         .value("AkaSozu5", Tile::Type::AkaSozu5)
         .export_values();
     py::class_<Hand>(m, "Hand").def(py::init<const std::vector<int>>());
+    pybind11::class_<ExpectedValueCalculator> exvc(m, "ExpectedValueCalculator");
+    py::enum_<ExpectedValueCalculator::Flag>(exvc, "Flag")
+        .value("Null", ExpectedValueCalculator::Flag::Null)
+        .value("CalcSyantenDown", ExpectedValueCalculator::Flag::CalcSyantenDown)
+        .value("CalcTegawari", ExpectedValueCalculator::Flag::CalcTegawari)
+        .value("CalcDoubleReach", ExpectedValueCalculator::Flag::CalcDoubleReach)
+        .value("CalcIppatu", ExpectedValueCalculator::Flag::CalcIppatu)
+        .value("CalcHaiteitumo", ExpectedValueCalculator::Flag::CalcHaiteitumo)
+        .value("CalcUradora", ExpectedValueCalculator::Flag::CalcUradora)
+        .value("CalcAkaTileTumo", ExpectedValueCalculator::Flag::CalcAkaTileTumo)
+        .value("MaximaizeWinProb", ExpectedValueCalculator::Flag::MaximaizeWinProb)
+        .export_values();
 
     
 }
