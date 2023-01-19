@@ -172,7 +172,10 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
     pybind11::class_<ExpectedValueCalculator> exvc(m, "ExpectedValueCalculator");
     exvc.def(py::init());
     pybind11::class_<ScoreCalculator> sc(m, "ScoreCalculator");
-    sc.def(py::init());
+    sc.def(py::init())
+        .def("set_bakaze",&ScoreCalculator::set_bakaze)
+        .def("set_zikaze",&ScoreCalculator::set_zikaze)
+        .def("set_dora_indicators",&ScoreCalculator::set_dora_indicators);
     py::enum_<ExpectedValueCalculator::Flag>(exvc, "Flag")
         .value("Null", ExpectedValueCalculator::Flag::Null)
         .value("CalcSyantenDown", ExpectedValueCalculator::Flag::CalcSyantenDown)
