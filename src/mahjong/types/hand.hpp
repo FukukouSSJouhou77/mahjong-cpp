@@ -26,6 +26,7 @@ class Hand : private boost::equality_comparable<Hand, Hand>
 
     Hand();
     Hand(const std::vector<int> &tiles);
+    Hand(const std::vector<Tile::Type> &tiles,bool a);
     Hand(const std::vector<int> &tiles, const std::vector<MeldedBlock> &melds);
 
     bool is_menzen() const;
@@ -122,6 +123,23 @@ inline Hand::Hand(const std::vector<int> &tiles)
 #endif
 
     convert_from_tile34(tiles);
+}
+/**
+ * @brief 手牌を作成する。
+ *
+ * @param[in] tiles 牌の一覧
+ */
+inline Hand::Hand(const std::vector<Tile::Type> &tiles,bool a)
+{
+#ifdef CHECK_ARGUMENT
+    if (!check_arguments(tiles, melds))
+        return;
+#endif
+    std::vector<int> tiles_int;
+    for (auto tile1 : tiles) {
+        tiles_int.push_back((int)tile1);
+    }
+    convert_from_tile34(tiles_int);
 }
 
 /**
