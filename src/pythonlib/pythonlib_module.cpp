@@ -175,7 +175,8 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
     sc.def(py::init())
         .def("set_bakaze",&ScoreCalculator::set_bakaze)
         .def("set_zikaze",&ScoreCalculator::set_zikaze)
-        .def("set_dora_indicators",&ScoreCalculator::set_dora_indicators);
+        .def("set_dora_indicators",&ScoreCalculator::set_dora_indicators)
+        .def("calc",&ScoreCalculator::calc);
     py::enum_<ExpectedValueCalculator::Flag>(exvc, "Flag")
         .value("Null", ExpectedValueCalculator::Flag::Null)
         .value("CalcSyantenDown", ExpectedValueCalculator::Flag::CalcSyantenDown)
@@ -187,6 +188,11 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
         .value("CalcAkaTileTumo", ExpectedValueCalculator::Flag::CalcAkaTileTumo)
         .value("MaximaizeWinProb", ExpectedValueCalculator::Flag::MaximaizeWinProb)
         .export_values();
+
+    pybind11::class_<SyantenCalculator> Syantenc(m, "SyantenCalculator");
+    Syantenc.def(py::init())
+        .def_static("calc",&SyantenCalculator::calc);
+
 
     
 }
