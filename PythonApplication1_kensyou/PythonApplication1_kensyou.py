@@ -17,8 +17,10 @@ bakaze=int(pymod.Tile.Ton);
 zikaze=int(pymod.Tile.Ton);
 turn=3;
 syanten_type=1;
-flag = int(pymod.ExpectedValueCalculator.CalcSyantenDown )| int(pymod.ExpectedValueCalculator.CalcTegawari   )| int(pymod.ExpectedValueCalculator.CalcDoubleReach )| int(pymod.ExpectedValueCalculator.CalcIppatu )| int(pymod.ExpectedValueCalculator.CalcHaiteitumo )| int(pymod.ExpectedValueCalculator.CalcUradora )| int(pymod.ExpectedValueCalculator.CalcAkaTileTumo
-
+flag = int(pymod.ExpectedValueCalculator.CalcSyantenDown )| int(pymod.ExpectedValueCalculator.CalcTegawari   )| int(pymod.ExpectedValueCalculator.CalcDoubleReach )| int(pymod.ExpectedValueCalculator.CalcIppatu )| int(pymod.ExpectedValueCalculator.CalcHaiteitumo )| int(pymod.ExpectedValueCalculator.CalcUradora )| int(pymod.ExpectedValueCalculator.CalcAkaTileTumo)
+dora_indicators=[int(pymod.Tile.Ton)]
+hand=hand5
+exp_value_calculator=pymod.ExpectedValueCalculator()
 print("test")
 print(a)
 input()

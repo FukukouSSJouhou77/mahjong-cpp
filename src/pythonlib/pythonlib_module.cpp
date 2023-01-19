@@ -170,6 +170,9 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
         .export_values();
     py::class_<Hand>(m, "Hand").def(py::init<const std::vector<int>>());
     pybind11::class_<ExpectedValueCalculator> exvc(m, "ExpectedValueCalculator");
+    exvc.def(py::init());
+    pybind11::class_<ScoreCalculator> sc(m, "ScoreCalculator");
+    sc.def(py::init());
     py::enum_<ExpectedValueCalculator::Flag>(exvc, "Flag")
         .value("Null", ExpectedValueCalculator::Flag::Null)
         .value("CalcSyantenDown", ExpectedValueCalculator::Flag::CalcSyantenDown)

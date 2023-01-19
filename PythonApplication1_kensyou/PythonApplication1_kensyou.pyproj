@@ -26,6 +26,13 @@
   <ItemGroup>
     <Compile Include="PythonApplication1_kensyou.py" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\build\src\pythonlib\mahjong_pythonlib_mod.vcxproj">
+      <Name>mahjong_pythonlib_mod</Name>
+      <Project>{6f9e196f-bad5-31c6-9f1f-2f774ecd5150}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
        Visual Studio and specify your pre- and post-build commands in
