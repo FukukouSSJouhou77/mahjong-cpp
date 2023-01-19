@@ -32,7 +32,7 @@ if success:
 else:
     print("ERR")
     exit(-1)
-print(candidates[0].tenpai_probs)
+exp_value_calculated = not candidates[0].tenpai_probs
 print(syanten)
 print("test")
 print(a)
