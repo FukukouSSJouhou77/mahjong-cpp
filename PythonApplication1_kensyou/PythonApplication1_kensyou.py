@@ -44,8 +44,11 @@ for candidate in candidates:
     sum_required_tiles=pymod.accumulate_candicate(candidate)
     print("[Da {}] Enabled hi : {:>2d} / {:>2d}".format(pymod.get_NameEnTile(int(candidate.tile)),len(candidate.required_tiles),sum_required_tiles),end="")
     if exp_value_calculated:
-        print(" Tenpai Ex: {:>5.2f}%,Hora Ex: {:>5.2f}%,Ex: {:>7.2f}%".format(candidate.tenpai_probs[turn - 1] * 100,candidate.win_probs[turn - 1] * 100,
-                                     candidate.exp_values[turn - 1]))
+        print(" Tenpai Ex: {:>5.2f}%,Hora Ex: {:>5.2f}%,Ex: {:>7.2f}".format(candidate.tenpai_probs[turn - 1] * 100,candidate.win_probs[turn - 1] * 100,
+                                     candidate.exp_values[turn - 1]),end="")
+        if(candidate.syanten_down):
+            print(" (Syanten Back)",end="")
+    print("")
 print("test")
 print(pymod.strtest())
 print(a)
