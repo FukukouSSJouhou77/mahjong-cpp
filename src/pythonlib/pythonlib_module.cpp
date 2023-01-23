@@ -129,7 +129,7 @@ void sort_Candicate(std::vector<Candidate> &candidates, int turn)
         return a.exp_values[turn - 1] > b.exp_values[turn - 1];
     });
 }
-void accumulate_candicate(Candidate& candi) {
+int accumulate_candicate(Candidate& candi) {
 
 }
 std::string strtest() { 
