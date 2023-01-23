@@ -42,7 +42,8 @@ if exp_value_calculated:
 print("Tehai: %s, Syanten: %d, Turn: %d" % (hand.to_string(),syanten,turn))
 for candidate in candidates:
     sum_required_tiles=pymod.accumulate_candicate(candidate)
-    print("[Da %s] Enabled hi : %d Tane %d Mai" % (pymod.get_NameEnTile(int(candidate.tile)),len(candidate.required_tiles),sum_required_tiles))
+    print("[Da %s] Enabled hi : %d/%d" % (pymod.get_NameEnTile(int(candidate.tile)),len(candidate.required_tiles),sum_required_tiles),end="")
+
 print("test")
 print(pymod.strtest())
 print(a)
