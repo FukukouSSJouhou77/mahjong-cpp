@@ -221,7 +221,7 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
         .def_readwrite("win_probs",&Candidate::win_probs)
         .def_readwrite("required_tiles",&Candidate::required_tiles)
         .def_readwrite("syanten_down", &Candidate::syanten_down);
-    candicate_Z.def_readwrite("required_tiles", &Candidate::required_tiles)
+    candicate_Z.def_readwrite("required_tiles", &Candidate::required_tiles);
     pybind11::class_<SyantenCalculator> Syantenc(m, "SyantenCalculator");
     Syantenc.def(py::init())
         .def_static("calc",&SyantenCalculator::calc);
