@@ -180,7 +180,8 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
         .value("AkaPinzu5", Tile::Type::AkaPinzu5)
         .value("AkaSozu5", Tile::Type::AkaSozu5)
         .export_values();
-    py::class_<Hand>(m, "Hand").def(py::init<const std::vector<int>>());
+    py::class_<Hand>(m, "Hand").def(py::init<const std::vector<int>>())
+        .def("to_string",&Hand::to_string);
     pybind11::class_<ExpectedValueCalculator> exvc(m, "ExpectedValueCalculator");
     exvc.def(py::init())
         .def("calc1",&ExpectedValueCalculator::calc1);
