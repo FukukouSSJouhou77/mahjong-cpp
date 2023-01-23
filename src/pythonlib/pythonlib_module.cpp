@@ -122,7 +122,7 @@ int sample_mod1() {
     }
     return 43044;
 }
-std::vector<Candidate>& sort_Candicate(std::vector<Candidate> &candidates, int turn)
+std::vector<Candidate> sort_Candicate(std::vector<Candidate> &candidates, int turn)
 {
 
     std::sort(candidates.begin(), candidates.end(), [turn](const Candidate &a, const Candidate &b) {
@@ -147,7 +147,7 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
 {
     m.doc() = "my test module";
     m.def("sample_mod1", &sample_mod1, "sample_mod1");
-    m.def("sort_Candicate", &sort_Candicate, "sort_Candicate");
+    m.def("sort_Candicate", &sort_Candicate);
     m.def("accumulate_candicate", &accumulate_candicate, "accumulate_candicate");
     m.def("strtest", &strtest, "strtest");
     pybind11::class_<Tile> tile(m, "Tile");

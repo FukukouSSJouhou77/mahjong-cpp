@@ -33,10 +33,10 @@ c,syanten=pymod.SyantenCalculator.calc(hand,syanten_type)
 success, candidates =exp_value_calculator.calc1(hand, score_calculator, dora_indicators, syanten_type, flag)
 if success:
     None
-else:
+else:   
     print("ERR")
     exit(-1)
-exp_value_calculated = not candidates[0].tenpai_probs
+exp_value_calculated = candidates[0].tenpai_probs
 if exp_value_calculated:
     candidates=pymod.sort_Candicate(candidates,turn)
 print("Tehai: %s, Syanten: %d, Turn: %d" % (hand.to_string(),syanten,turn))
