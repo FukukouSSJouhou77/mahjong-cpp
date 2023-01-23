@@ -71,16 +71,16 @@ struct Tile
         {AkaPinzu5, "赤五筒"}, {AkaSozu5, "赤五索"}};
 
     static inline const std::map<int, std::string> EnName = {
-        {Null, "Null"},        {Manzu1, "一萬"},    {Manzu2, "二萬"}, {Manzu3, "三萬"},
-        {Manzu4, "四萬"},      {Manzu5, "五萬"},    {Manzu6, "六萬"}, {Manzu7, "七萬"},
-        {Manzu8, "八萬"},      {Manzu9, "九萬"},    {Pinzu1, "一筒"}, {Pinzu2, "二筒"},
-        {Pinzu3, "三筒"},      {Pinzu4, "四筒"},    {Pinzu5, "五筒"}, {Pinzu6, "六筒"},
-        {Pinzu7, "七筒"},      {Pinzu8, "八筒"},    {Pinzu9, "九筒"}, {Sozu1, "一索"},
-        {Sozu2, "二索"},       {Sozu3, "三索"},     {Sozu4, "四索"},  {Sozu5, "五索"},
-        {Sozu6, "六索"},       {Sozu7, "七索"},     {Sozu8, "八索"},  {Sozu9, "九索"},
-        {Ton, "東"},           {Nan, "南"},         {Sya, "西"},      {Pe, "北"},
-        {Haku, "白"},          {Hatu, "發"},        {Tyun, "中"},     {AkaManzu5, "赤五萬"},
-        {AkaPinzu5, "赤五筒"}, {AkaSozu5, "赤五索"}};
+        {Null, "Null"},        {Manzu1, "1Man"},    {Manzu2, "2Man"}, {Manzu3, "3Man"},
+        {Manzu4, "4Man"},      {Manzu5, "5Man"},    {Manzu6, "6Man"}, {Manzu7, "7Man"},
+        {Manzu8, "8Man"},      {Manzu9, "9Man"},    {Pinzu1, "1Pin"}, {Pinzu2, "2Pin"},
+        {Pinzu3, "3Pin"},      {Pinzu4, "4Pin"},    {Pinzu5, "5Pin"}, {Pinzu6, "6Pin"},
+        {Pinzu7, "7Pin"},      {Pinzu8, "8Pin"},    {Pinzu9, "9Pin"}, {Sozu1, "1So "},
+        {Sozu2, "2So "},       {Sozu3, "3So "},     {Sozu4, "4So "},  {Sozu5, "5So "},
+        {Sozu6, "6So "},       {Sozu7, "7So "},     {Sozu8, "8So "},  {Sozu9, "9So "},
+        {Ton, "Ton "},           {Nan, "Nan "},         {Sya, "Sya "},      {Pe, "Pe  "},
+        {Haku, "Haku"},          {Hatu, "Hatu"},        {Tyun, "Tyun"},     {AkaManzu5, "5AM "},
+        {AkaPinzu5, "5AP "}, {AkaSozu5, "5AS "}};
 };
 
 /**
