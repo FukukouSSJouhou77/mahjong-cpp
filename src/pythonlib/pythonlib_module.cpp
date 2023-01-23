@@ -147,6 +147,7 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
     m.doc() = "my test module";
     m.def("sample_mod1", &sample_mod1, "sample_mod1");
     m.def("sort_Candicate", &sort_Candicate, "sort_Candicate");
+    m.def("accumulate_candicate", &accumulate_candicate, "accumulate_candicate");
     m.def("strtest", &strtest, "strtest");
     pybind11::class_<Tile> tile(m, "Tile");
     py::enum_<Tile::Type>(tile, "Type")
