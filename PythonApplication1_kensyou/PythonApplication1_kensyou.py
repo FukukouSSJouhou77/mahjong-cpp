@@ -40,7 +40,9 @@ exp_value_calculated = not candidates[0].tenpai_probs
 if exp_value_calculated:
     pymod.sort_Candicate(candicates,turn)
 print("Tehai: %s, Syanten: %d, Turn: %d" % (hand.to_string(),syanten,turn))
-print(syanten)
+for candidate in candidates:
+    sum_required_tiles=pymod.accumulate_candicate(candidate)
+    print("sum_required_tiles:%d" & (sum_required_tiles))
 print("test")
 print(pymod.strtest())
 print(a)
