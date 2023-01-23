@@ -149,6 +149,7 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
     m.def("sample_mod1", &sample_mod1, "sample_mod1");
     m.def("sort_Candicate", &sort_Candicate);
     m.def("accumulate_candicate", &accumulate_candicate, "accumulate_candicate");
+    m.def("get_NameEnTile", &get_NameEnTile, "get_NameEnTile");
     m.def("strtest", &strtest, "strtest");
     pybind11::class_<Tile> tile(m, "Tile");
     py::enum_<Tile::Type>(tile, "Type")
@@ -213,12 +214,14 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
         .value("MaximaizeWinProb", ExpectedValueCalculator::Flag::MaximaizeWinProb)
         .export_values();
     py::class_<Candidate> candicate_Z(m, "Candidate");
+    candicate_Z.def_readwrite("tile", &Candidate::tile);
     candicate_Z.def_readwrite("tenpai_probs", &Candidate::tenpai_probs)
         .def_readwrite("exp_values",&Candidate::exp_values)
         .def_readwrite("tile",&Candidate::tile)
         .def_readwrite("win_probs",&Candidate::win_probs)
         .def_readwrite("required_tiles",&Candidate::required_tiles)
-        .def_readwrite("syanten_down",&Candidate::syanten_down);
+        .def_readwrite("syanten_down", &Candidate::syanten_down);
+    candicate_Z.def_readwrite("required_tiles", &Candidate::required_tiles)
     pybind11::class_<SyantenCalculator> Syantenc(m, "SyantenCalculator");
     Syantenc.def(py::init())
         .def_static("calc",&SyantenCalculator::calc);
