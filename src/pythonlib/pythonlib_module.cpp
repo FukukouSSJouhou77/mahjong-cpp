@@ -132,6 +132,9 @@ void sort_Candicate(std::vector<Candidate> &candidates, int turn)
 std::string strtest() { 
     return "Extra";
 }
+std::string get_NameEnTile(int tl) { 
+    return Tile::EnName.at(tl);
+}
 namespace py = pybind11;
 
 PYBIND11_MODULE(mahjong_pythonlib_mod, m)
