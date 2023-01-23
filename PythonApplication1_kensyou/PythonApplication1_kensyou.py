@@ -39,7 +39,7 @@ else:
 exp_value_calculated = not candidates[0].tenpai_probs
 if exp_value_calculated:
     pymod.sort_Candicate(candicates,turn)
-
+print("è”v: %s, Œü’®”: %d, „–Ú: %d"())
 print(syanten)
 print("test")
 print(pymod.strtest())
