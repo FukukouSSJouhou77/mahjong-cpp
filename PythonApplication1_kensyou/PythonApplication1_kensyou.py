@@ -4,6 +4,7 @@ import mahjong_pythonlib_mod as pymod
 
 
 a=pymod.sample_mod1()
+print("Python Module!")
 handkun=pymod.Hand([int(pymod.Tile.Manzu1)])
 hand1=pymod.Hand([int(pymod.Tile.Manzu2), int(pymod.Tile.Manzu2), int(pymod.Tile.Manzu2), int(pymod.Tile.Manzu5), int(pymod.Tile.Manzu6), int(pymod.Tile.Manzu7),int(pymod.Tile.Pinzu3), int(pymod.Tile.Pinzu4), int(pymod.Tile.Pinzu5), int(pymod.Tile.Sozu3), int(pymod.Tile.Sozu3), int(pymod.Tile.Sozu6),int(pymod.Tile.Sozu6), int(pymod.Tile.Sozu7)])
 hand2=pymod.Hand([int(pymod.Tile.Manzu2), int(pymod.Tile.Manzu2), int(pymod.Tile.Manzu2), int(pymod.Tile.Manzu5), int(pymod.Tile.Manzu6), int(pymod.Tile.Manzu7),int(pymod.Tile.Pinzu3), int(pymod.Tile.Pinzu4), int(pymod.Tile.Sozu3), int(pymod.Tile.Sozu3), int(pymod.Tile.Sozu6), int(pymod.Tile.Sozu6),int(pymod.Tile.Sozu7), int(pymod.Tile.Pe)])
@@ -38,7 +39,9 @@ else:
 exp_value_calculated = not candidates[0].tenpai_probs
 if exp_value_calculated:
     pymod.sort_Candicate(candicates,turn)
+
 print(syanten)
 print("test")
+print(pymod.strtest())
 print(a)
 input()

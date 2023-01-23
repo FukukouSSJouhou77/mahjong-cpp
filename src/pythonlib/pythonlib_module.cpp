@@ -129,6 +129,9 @@ void sort_Candicate(std::vector<Candidate> &candidates, int turn)
         return a.exp_values[turn - 1] > b.exp_values[turn - 1];
     });
 }
+std::string strtest() { 
+    return "Extra";
+}
 namespace py = pybind11;
 
 PYBIND11_MODULE(mahjong_pythonlib_mod, m)
@@ -136,6 +139,7 @@ PYBIND11_MODULE(mahjong_pythonlib_mod, m)
     m.doc() = "my test module";
     m.def("sample_mod1", &sample_mod1, "sample_mod1");
     m.def("sort_Candicate", &sort_Candicate, "sort_Candicate");
+    m.def("strtest", &strtest, "strtest");
     pybind11::class_<Tile> tile(m, "Tile");
     py::enum_<Tile::Type>(tile, "Type")
         .value("Manzu1", Tile::Type::Manzu1)
