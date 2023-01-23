@@ -122,12 +122,13 @@ int sample_mod1() {
     }
     return 43044;
 }
-void sort_Candicate(std::vector<Candidate> &candidates, int turn)
+std::vector<Candidate>& sort_Candicate(std::vector<Candidate> &candidates, int turn)
 {
 
     std::sort(candidates.begin(), candidates.end(), [turn](const Candidate &a, const Candidate &b) {
         return a.exp_values[turn - 1] > b.exp_values[turn - 1];
     });
+    return candidates;
 }
 int accumulate_candicate(Candidate &candidate)
 {
