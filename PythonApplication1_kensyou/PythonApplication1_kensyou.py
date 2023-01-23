@@ -42,7 +42,7 @@ if exp_value_calculated:
 print("Tehai: %s, Syanten: %d, Turn: %d" % (hand.to_string(),syanten,turn))
 for candidate in candidates:
     sum_required_tiles=pymod.accumulate_candicate(candidate)
-    print("sum_required_tiles:%d" & (sum_required_tiles))
+    print("sum_required_tiles:%d" % (sum_required_tiles))
 print("test")
 print(pymod.strtest())
 print(a)
