@@ -92,7 +92,7 @@ int sample_mod1() {
             std::accumulate(candidate.required_tiles.begin(), candidate.required_tiles.end(), 0,
                             [](auto &a, auto &b) { return a + std::get<1>(b); });
 
-        std::cout << fmt::format("[‘Å {}] —LŒø”v: {:>2d}Ží{:>2d}–‡", Tile::Name.at(candidate.tile),
+        std::cout << fmt::format("[‘Å {}] —LŒø”v: {:>2d}Ží{:>2d}–‡", Tile::EnName.at(candidate.tile),
                                  candidate.required_tiles.size(), sum_required_tiles);
 
         if (exp_value_calculated)
