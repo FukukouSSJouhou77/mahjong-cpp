@@ -1,3 +1,5 @@
 build/
 .vscode/
 __pycache__/
+dist/
+mahjong_pythonlib_mod.egg-info/

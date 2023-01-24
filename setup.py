@@ -36,7 +36,7 @@ class CMakeBuild(build_ext):
         # auxiliary "native" libs
 
         debug = int(os.environ.get("DEBUG", 0)) if self.debug is None else self.debug
-        cfg = "Debug" if debug else "Release"
+        cfg = "Debug" if debug else "Debug"
 
         # CMake lets you override the generator - we need to check this.
         # Can be set with Conda-Build, for example.
@@ -49,6 +49,13 @@ class CMakeBuild(build_ext):
             f"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={extdir}{os.sep}",
             f"-DPYTHON_EXECUTABLE={sys.executable}",
             f"-DCMAKE_BUILD_TYPE={cfg}",  # not used on MSVC, but no harm
+            f"-DBoost_NO_WARN_NEW_VERSIONS=1",
+            f"-DBoost_DEBUG=1",
+            f"-DBoost_ADDITIONAL_VERSIONS=1.81",
+            f"-DBoost_INCLUDE_DIR=C:/Users/SSH/Documents/boost_1_81_0",
+            f"-DBUILD_SERVER=0",
+            f"-DBUILD_TEST=0",
+            f"-DBUILD_SAMPLES=0"
         ]
         build_args = []
         # Adding CMake arguments set as environment variable
