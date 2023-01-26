@@ -23,11 +23,10 @@ bool HandSeparator::initialize()
 {
     if (!s_tbl_.empty())
         return true; // 初期化済み
-
     boost::filesystem::path s_tbl_path =
-        boost::dll::program_location().parent_path() / "syupai_pattern.json";
+        boost::dll::this_line_location().parent_path() / "syupai_pattern.json";
     boost::filesystem::path z_tbl_path =
-        boost::dll::program_location().parent_path() / "zihai_pattern.json";
+        boost::dll::this_line_location().parent_path() / "zihai_pattern.json";
 
     return make_table(s_tbl_path.string(), s_tbl_) && make_table(z_tbl_path.string(), z_tbl_);
 }
