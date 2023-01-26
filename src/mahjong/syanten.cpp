@@ -56,7 +56,7 @@ std::tuple<int, int> SyantenCalculator::calc(const Hand &hand, int type)
  */
 bool SyantenCalculator::initialize()
 {
-    boost::filesystem::path exe_path = boost::dll::program_location().parent_path();
+    boost::filesystem::path exe_path = boost::dll::this_line_location().parent_path();
 
 #ifdef USE_UNORDERED_MAP
     if (s_tbl_.empty()) {
