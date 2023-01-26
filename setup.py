@@ -136,7 +136,7 @@ class CMakeBuild(build_ext):
 # logic and declaration, and simpler if you include description/version in a file.
 setup(
     name="mahjong_pythonlib_mod",
-    version="0.0.1.1",
+    version="0.0.1.2",
     author="",
     author_email="",
     description="mahjong_pythonlib_mod",
